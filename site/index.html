@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Не забудь</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Не забудь</div>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Геолокационные напоминания</div>
+                <h1>Не забудь<span class="accent">.</span></h1>
+                <p>Умные напоминания, которые срабатывают <strong>в нужном месте</strong>, а не в нужное время</p>
+                <a href="about.html" class="btn">Узнать больше</a>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="mockup">📱</div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Ключевые возможности</h2>
+            <div class="cards">
+                <div class="card fade-in">
+                    <div class="card-icon">📍</div>
+                    <h3>Геозоны</h3>
+                    <p>Напоминание срабатывает, когда вы приходите в нужное место</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🎙️</div>
+                    <h3>Голосовой ввод</h3>
+                    <p>Просто скажите: «Напомни купить хлеб, когда буду в Пятёрочке»</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📡</div>
+                    <h3>Офлайн-режим</h3>
+                    <p>Работает без интернета — карты кешируются на устройстве</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Ким Илья Васильевич, Андреева Ксения Никитична, Темченко Софья Игоревна. Учебный проект.</p>
+    </footer>
+
+   <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Максимально плавная анимация hero
+    function animateHero() {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.classList.add('visible');
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(animateHero, 500); // старт чуть позже
+    });
+</script>
+
+</body>
+</html>
