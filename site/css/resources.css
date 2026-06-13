@@ -1,0 +1,93 @@
+/* ==================== RESOURCES CONTENT ==================== */
+.resources-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+/* ==================== RESOURCE GROUP ==================== */
+.resource-group h2 {
+    font-size: 26px;
+    margin-bottom: 28px;
+    color: #fff;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.resource-cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+/* ==================== RESOURCE CARD ==================== */
+.resource-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 28px;
+    width: 340px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #4f9eff, transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    border-color: #4f9eff;
+    box-shadow: 0 20px 40px rgba(79, 158, 255, 0.12);
+}
+
+.resource-card:hover::before {
+    transform: scaleX(1);
+}
+
+.resource-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resource-icon {
+    font-size: 28px;
+}
+
+.resource-tag {
+    background: rgba(79, 158, 255, 0.15);
+    color: #4f9eff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid rgba(79, 158, 255, 0.3);
+}
+
+.resource-card h3 {
+    font-size: 18px;
+    color: #fff;
+}
+
+.resource-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}

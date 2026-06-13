@@ -1,0 +1,626 @@
+/* ==================== ОБЩИЕ СТИЛИ ==================== */
+/* Эти стили применяются ко всем страницам сайта */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+}
+
+/* НАВИГАЦИЯ */
+header {
+  background-color: #1a1a1a;
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4f9eff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+nav ul a:hover, nav ul a.active {
+  color: #4f9eff;
+}
+
+/* КНОПКА */
+.btn {
+  background-color: #4f9eff;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #3a8aee;
+}
+
+/* ФУТЕР */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: #777;
+  border-top: 1px solid #2a2a2a;
+}
+
+footer .polytech-note {
+  color: #4f9eff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* АНИМАЦИИ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==================== СТИЛИ СТРАНИЦЫ "О ПРОЕКТЕ" (about.html) ==================== */
+
+/* HERO секция */
+.page-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79,158,255,0.15), transparent);
+  top: -150px;
+  right: -150px;
+  border-radius: 50%;
+}
+
+.page-tag {
+  display: inline-block;
+  background: rgba(79,158,255,0.15);
+  color: #4f9eff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(79,158,255,0.3);
+}
+
+.page-hero h1 {
+  font-size: 64px;
+  color: #fff;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.page-hero p {
+  color: #bbb;
+  font-size: 22px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.page-hero p strong {
+  color: #4f9eff;
+}
+
+/* Секция "Контекстная слепота" */
+.context-blindness {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.context-blindness h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.context-blindness > p {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.process-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.process-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 40px 24px;
+  width: 300px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #4f9eff, transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-12px);
+  border-color: #4f9eff;
+  box-shadow: 0 25px 50px rgba(79, 158, 255, 0.15);
+}
+
+.process-card:hover::before {
+  transform: scaleX(1);
+}
+
+.process-card svg {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 24px;
+  transition: transform 0.4s ease;
+}
+
+.process-card:hover svg {
+  transform: scale(1.1);
+}
+
+.process-card h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.process-card p {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.process-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f9eff;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.process-arrow svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Секция "Преимущества" */
+.advantages {
+  padding: 100px 20px;
+  background-color: #121212;
+}
+
+.advantages-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.advantages h2 {
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.advantages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.advantage-item {
+  flex: 1 1 180px;
+  max-width: 220px;
+  background: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.advantage-item:hover {
+  border-color: #4f9eff;
+  background: #1f1f1f;
+  transform: translateY(-5px);
+}
+
+.advantage-item svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: #4f9eff;
+}
+
+.advantage-item h4 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.advantage-item p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Секция "Целевая аудитория" */
+.target-audience {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.target-audience h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.target-audience > p {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.audience-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.audience-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 320px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-8px);
+  border-color: #4f9eff;
+}
+
+.audience-card svg {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  color: #4f9eff;
+}
+
+.audience-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.audience-card p {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.economic-model {
+  background: rgba(79, 158, 255, 0.05);
+  border: 1px solid rgba(79, 158, 255, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.economic-model strong {
+  color: #4f9eff;
+}
+
+
+/* ==================== СТИЛИ СТРАНИЦЫ "УЧАСТНИКИ" (participants.html) ==================== */
+
+.participant-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.participant-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79,158,255,0.08), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.participant-section:nth-child(odd)::before {
+  top: -100px;
+  right: -100px;
+}
+
+.participant-section:nth-child(even)::before {
+  bottom: -100px;
+  left: -100px;
+}
+
+.participant-grid {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Swap order for even sections (right image) */
+.participant-section:nth-child(even) .participant-grid {
+  direction: rtl;
+}
+
+.participant-section:nth-child(even) .participant-grid > * {
+  direction: ltr;
+}
+
+.participant-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.participant-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4f9eff;
+  box-shadow: 0 0 40px rgba(79, 158, 255, 0.2);
+  background-color: #1a1a1a;
+}
+
+.participant-info h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.participant-group {
+  color: #4f9eff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.participant-specialty {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.participant-desc {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.participant-section .participant-grid {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержки для элементов внутри секции */
+.participant-section .participant-image-wrapper {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-image-wrapper {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.participant-section .participant-info h2 {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-info h2 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
+.participant-section .participant-group {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-group {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.7s;
+}
+
+.participant-section .participant-specialty {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-specialty {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.9s;
+}
+
+.participant-section .participant-desc {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.participant-section.visible .participant-desc {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1.1s;
+}
+
+/* Для четных секций (изображение справа) меняем направление анимации */
+.participant-section:nth-child(even) .participant-image-wrapper {
+  transform: translateX(30px);
+}
+
+.participant-section:nth-child(even) .participant-info h2,
+.participant-section:nth-child(even) .participant-group,
+.participant-section:nth-child(even) .participant-specialty,
+.participant-section:nth-child(even) .participant-desc {
+  transform: translateX(-30px);
+}
+
+/* Анимация для фоновых кругов */
+.participant-section::before {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.participant-section.visible::before {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+           
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+
+@media (max-width: 768px) {
+  .page-hero h1 { font-size: 42px; }
+  .page-hero p { font-size: 18px; }
+  .process-wrapper { flex-direction: column; }
+  .process-arrow { transform: rotate(90deg); margin: 8px 0; }
+  .advantage-item { max-width: 100%; flex: 1 1 100%; }
+  
+  .participant-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .participant-section:nth-child(even) .participant-grid {
+    direction: ltr;
+  }
+  .participant-image {
+    width: 240px;
+    height: 240px;
+  }
+}

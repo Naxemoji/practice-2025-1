@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Участники — Не забудь</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/index.min.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Не забудь</div>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О проекте</a></li>
+        <li><a href="participants.html" class="active">Участники</a></li>
+        <li><a href="journal.html">Журнал</a></li>
+        <li><a href="resources.html">Ресурсы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Участник 1 -->
+  <section class="participant-section">
+    <div class="participant-grid">
+      <div class="participant-image-wrapper">
+        <img src="placeholder1.jpg" alt="Иванов Иван" class="participant-image">
+      </div>
+      <div class="participant-info">
+        <h2>Иванов Иван</h2>
+        <div class="participant-group">Группа 253-331</div>
+        <div class="participant-specialty">Автоматизированные системы и программирование</div>
+        <p class="participant-desc">
+          В рамках проектной деятельности я отвечал за разработку архитектуры мобильного приложения и интеграцию геолокационных сервисов. Мной был реализован модуль фоновой работы с геозонами, который позволяет приложению отслеживать местоположение пользователя даже в офлайн-режиме. Также я занимался настройкой взаимодействия с API Яндекс.Карт и 2ГИС для точного определения точек интереса. Провел анализ существующих решений на рынке и выявил ключевые недостатки, которые мы устранили в нашем продукте. Участвовал в формировании технического задания и прототипировании пользовательского интерфейса, обеспечивая соответствие функционала потребностям целевой аудитории.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Участник 2 -->
+  <section class="participant-section">
+    <div class="participant-grid">
+      <div class="participant-image-wrapper">
+        <img src="placeholder2.jpg" alt="Иванова Мария" class="participant-image">
+      </div>
+      <div class="participant-info">
+        <h2>Иванова Мария</h2>
+        <div class="participant-group">Группа 253-331</div>
+        <div class="participant-specialty">Автоматизированные системы и программирование</div>
+        <p class="participant-desc">
+          Мой вклад в проект сосредоточен на проектировании пользовательского опыта и визуального дизайна интерфейса. Я провела исследование целевой аудитории, чтобы понять боли пользователей при использовании обычных списков задач. На основе полученных данных разработала wireframes и интерактивные прототипы основных экранов приложения. Особое внимание уделила сценариям создания голосовых напоминаний и отображению уведомлений в момент приближения к цели. Также я подготовила брендбук проекта, включая цветовую палитру, типографику и набор иконок. Провела юзабилити-тестирование прототипов и внесла корректировки для улучшения навигации и читаемости контента.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Участник 3 -->
+  <section class="participant-section">
+    <div class="participant-grid">
+      <div class="participant-image-wrapper">
+        <img src="placeholder3.jpg" alt="Иванов Петр" class="participant-image">
+      </div>
+      <div class="participant-info">
+        <h2>Иванов Петр</h2>
+        <div class="participant-group">Группа 253-331</div>
+        <div class="participant-specialty">Автоматизированные системы и программирование</div>
+        <p class="participant-desc">
+          Я взял на себя задачи по бизнес-анализу и планированию стратегии продвижения продукта. Мною была разработана экономическая модель Freemium, включающая расчет стоимости подписки и потенциальных доходов от B2B-партнерств с ритейлерами. Подготовил презентацию проекта для защиты, структурировав технические и маркетинговые аспекты. Занимался анализом конкурентной среды и позиционированием нашего решения как импортозамещающего продукта. Организовал взаимодействие команды, вел документацию по ходу выполнения этапов проектной деятельности. Также участвовал в тестировании финальной версии приложения и сборе обратной связи от первых пользователей для формирования плана дальнейших улучшений.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="polytech-note">Разрабатывается командой студентов Московского Политеха в рамках импортозамещения и локализации ПО.</p>
+    <p>© 2026 Ким Илья Васильевич, Андреева Ксения Никитична, Темченко Софья Игоревна. Учебный проект.</p>
+  </footer>
+</body>
+
+   <script>
+  // Intersection Observer для анимаций появления секций участников
+  const participantObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { 
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  // Наблюдаем за всеми секциями участников
+  document.querySelectorAll('.participant-section').forEach(section => {
+    participantObserver.observe(section);
+  });
+  </script>
+</html>
+
